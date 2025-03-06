@@ -5,11 +5,16 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 import colour
+
 import numpy as np
 import colour_demosaicing
 from skimage.metrics import structural_similarity as ssim
 from skimage.util import img_as_float, img_as_ubyte
 from skimage.metrics import peak_signal_noise_ratio as compare_psnr
+# 设置字体的属性
+# plt.rcParams["font.sans-serif"] = "Arial Unicode MS"
+plt.rcParams["font.sans-serif"] = "SimHei"
+plt.rcParams["axes.unicode_minus"] = False
 
 # 马赛克化
 def mosaicking(image):
@@ -279,31 +284,31 @@ print(f"PSNR value: {psnr_value} dB")
 fig, axes = plt.subplots(3, 3, figsize=(15, 10))
 
 axes[0, 0].imshow(rgb)
-axes[0, 0].set_title('rgb')
+axes[0, 0].set_title('输入图像的RGB通道')
 axes[0, 0].axis('off')
 
 axes[0, 1].imshow(raw, cmap='grey')
-axes[0, 1].set_title('raw')
+axes[0, 1].set_title('RAW图像')
 axes[0, 1].axis('off')
 
 axes[0, 2].imshow(quadBayer, cmap='grey')
-axes[0, 2].set_title('quadBayer')
+axes[0, 2].set_title('四倍拜尔图像')
 axes[0, 2].axis('off')
 
 axes[1, 0].imshow(bayerImage1, cmap='grey')
-axes[1, 0].set_title('bayerImage1')
+axes[1, 0].set_title('拜尔图像')
 axes[1, 0].axis('off')
 
 axes[1, 1].imshow(bayerImage2, cmap='grey')
-axes[1, 1].set_title('bayerImage2')
+axes[1, 1].set_title('上采样后的拜尔图像')
 axes[1, 1].axis('off')
 
 axes[1, 2].imshow(outputImage)
-axes[1, 2].set_title('outputImage')
+axes[1, 2].set_title('输出图像')
 axes[1, 2].axis('off')
 
 axes[2, 0].imshow(outputImage1)
-axes[2, 0].set_title('outputImage1')
+axes[2, 0].set_title('不经过上下采样，只进行引导滤波的输出图像')
 axes[2, 0].axis('off')
 
 plt.tight_layout()
