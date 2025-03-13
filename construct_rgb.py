@@ -25,22 +25,22 @@ def construct_rgb(mean_a, mean_b):
     for i in range(rr // 2):
         for j in range(cc // 2):
             mean_a_full[i * 4, j * 4 + 2, 1] = mean_a[i * 2, j * 2, 1]
-            mean_a_full[i * 4, j * 4 + 2 + 1, 1] = mean_a[i * 2 + 1, j * 2, 1]
+            mean_a_full[i * 4, j * 4 + 2 + 1, 1] = mean_a[i * 2, j * 2 + 1, 1]
             mean_a_full[i * 4 + 1, j * 4 + 2, 1] = mean_a[i * 2 + 1, j * 2, 1]
             mean_a_full[i * 4 + 1, j * 4 + 2 + 1, 1] = mean_a[i * 2 + 1, j * 2 + 1, 1]
 
             mean_a_full[i * 4 + 2, j * 4, 1] = mean_a[i * 2, j * 2, 2]
-            mean_a_full[i * 4 + 2, j * 4 + 1, 1] = mean_a[i * 2 + 1, j * 2, 2]
+            mean_a_full[i * 4 + 2, j * 4 + 1, 1] = mean_a[i * 2, j * 2 + 1, 2]
             mean_a_full[i * 4 + 2 + 1, j * 4, 1] = mean_a[i * 2 + 1, j * 2, 2]
             mean_a_full[i * 4 + 2 + 1, j * 4 + 1, 1] = mean_a[i * 2 + 1, j * 2 + 1, 2]
 
             mean_b_full[i * 4, j * 4 + 2, 1] = mean_b[i * 2, j * 2, 1]
-            mean_b_full[i * 4, j * 4 + 2 + 1, 1] = mean_b[i * 2 + 1, j * 2, 1]
+            mean_b_full[i * 4, j * 4 + 2 + 1, 1] = mean_b[i * 2, j * 2 + 1, 1]
             mean_b_full[i * 4 + 1, j * 4 + 2, 1] = mean_b[i * 2 + 1, j * 2, 1]
             mean_b_full[i * 4 + 1, j * 4 + 2 + 1, 1] = mean_b[i * 2 + 1, j * 2 + 1, 1]
 
             mean_b_full[i * 4 + 2, j * 4, 1] = mean_b[i * 2, j * 2, 2]
-            mean_b_full[i * 4 + 2, j * 4 + 1, 1] = mean_b[i * 2 + 1, j * 2, 2]
+            mean_b_full[i * 4 + 2, j * 4 + 1, 1] = mean_b[i * 2, j * 2 + 1, 2]
             mean_b_full[i * 4 + 2 + 1, j * 4, 1] = mean_b[i * 2 + 1, j * 2, 2]
             mean_b_full[i * 4 + 2 + 1, j * 4 + 1, 1] = mean_b[i * 2 + 1, j * 2 + 1, 2]
 
