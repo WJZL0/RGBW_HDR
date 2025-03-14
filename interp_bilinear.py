@@ -3,7 +3,7 @@ import numpy as np
 def interp_bilinearR(R):
     row, col = R.shape
     #hor
-    for i in range(row // 4 ):
+    for i in range(row // 4):
         for j in range(col // 4 - 1):
             R[i * 4, j * 4 + 2] = (R[i * 4, j * 4 + 1] * 2 + R[i * 4, j * 4 + 4]) / 3
             R[i * 4, j * 4 + 3] = (R[i * 4, j * 4 + 4] * 2 + R[i * 4, j * 4 + 1]) / 3
@@ -18,7 +18,7 @@ def interp_bilinearR(R):
             R[i * 4 + 3, j * 4 + 1] = (R[i * 4 + 4, j * 4 + 1] * 2 + R[i * 4 + 1, j * 4 + 1]) / 3
     #center
     for i in range(row // 4 - 1):
-        for j  in range(col // 4 - 1):
+        for j in range(col // 4 - 1):
             R[i * 4 + 2, j * 4 + 2] = (R[i * 4 + 1, j * 4 + 1] * 4 +
                                        R[i * 4 + 1, j * 4 + 4] * 2 +
                                        R[i * 4 + 4, j * 4 + 1] * 2 +
@@ -143,7 +143,7 @@ def interp_bilinearG(G):
             G[i * 4 + 1, j * 4 + 1] = (G[i * 4 + 1, j * 4 + 2] * 2 +
                                        G[i * 4 + 2, j * 4 + 1] * 2 +
                                        G[i * 4 - 1, j * 4 + 1] +
-                                       G[i * 4 + 1, j * 4 -1]) / 6
+                                       G[i * 4 + 1, j * 4 - 1]) / 6
 
     i = 0
     for j in range(1, col // 4):
@@ -154,7 +154,7 @@ def interp_bilinearG(G):
 
     j = 0
     for i in range(1, row // 4):
-        G[i * 4, j * 4] = (G[i * 4 -1, j * 4] * 2 + G[i * 4 + 2, j * 4]) / 3
+        G[i * 4, j * 4] = (G[i * 4 - 1, j * 4] * 2 + G[i * 4 + 2, j * 4]) / 3
         G[i * 4 + 1, j * 4] = (G[i * 4 + 2, j * 4] * 2 + G[i * 4 - 1, j * 4]) / 3
         G[i * 4, j * 4 + 1] = (G[i * 4 - 1, j * 4 + 1] * 2 + G[i * 4 + 2, j * 4 + 1]) / 3
         G[i * 4 + 1, j * 4 + 1] = (G[i * 4 + 2, j * 4 + 1] * 2 + G[i * 4 - 1, j * 4 + 1]) / 3
